@@ -1,4 +1,4 @@
 Programming
 ===========
 
-Here I am putting my learning programs
+Solutions of R.G. Dromey book - How To Solve it by Computer.
