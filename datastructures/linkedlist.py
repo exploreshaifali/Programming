@@ -60,3 +60,14 @@ class LinkedList:
                 temp._next = temp._next._next
         else:
             print("wrong position")
+
+    def reverse(self):
+        """Reverse the linked list."""
+        prev = None
+        curr = self.head
+        while curr is not None:
+            nex = curr._next
+            curr._next = prev
+            prev = curr
+            curr = nex
+        self.head = prev
