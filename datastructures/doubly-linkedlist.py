@@ -23,3 +23,9 @@ class DoublyLinkedList:
             temp = temp.nex
         new_node = Node(data, pre=temp, nex=None)
         temp.nex = new_node
+
+    def travel(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data, end=" ")
+            temp = temp.nex
