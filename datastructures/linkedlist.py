@@ -17,3 +17,9 @@ class LinkedList:
         while temp is not None:
             print(temp.data)
             temp = temp._next
+
+    def insert(self, data):
+        """Insert elemet at begining of list."""
+        temp = Node(data)
+        temp._next = self.head
+        self.head = temp
