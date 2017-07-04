@@ -78,6 +78,5 @@ class LinkedList:
             self.head = curr
             return
         self.recursive_reverse(curr._next)
-        nex = curr._next
-        nex._next = curr
+        curr._next._next = curr
         curr._next = None
