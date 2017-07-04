@@ -34,3 +34,11 @@ class DoublyLinkedList:
         while temp is not None:
             print(temp.data, end=" ")
             temp = temp.nex
+
+    def reverse_travel(self):
+        temp = self.head
+        while temp.nex is not None:
+            temp = temp.nex
+        while temp is not None:
+            print(temp.data, end=' ')
+            temp = temp.pre
