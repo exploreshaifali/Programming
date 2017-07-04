@@ -10,3 +10,10 @@ class LinkedList:
             self.head = None
         else:
             self.head = Node(data)
+
+    def travel(self):
+        """Print all element in linked-list link-wise."""
+        temp = self.head
+        while temp is not None:
+            print(temp.data)
+            temp = temp._next
