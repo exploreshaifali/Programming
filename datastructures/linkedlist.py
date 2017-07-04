@@ -23,3 +23,22 @@ class LinkedList:
         temp = Node(data)
         temp._next = self.head
         self.head = temp
+
+    def insertAt(self, data, n):
+        """Insert at position index n, starting with zero."""
+        temp = self.head
+        if n == 0:
+            new_node = Node(data)
+            new_node._next = temp
+            self.head = new_node
+            return
+        i = 0
+        while (i < (n-1)) and (temp is not None):
+            i += 1
+            temp = temp._next
+        if (i == (n-1)) and (temp is not None):
+            new_node = Node(data)
+            new_node._next = temp._next
+            temp._next = new_node
+        else:
+            print("not a good position.")
