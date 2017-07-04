@@ -71,3 +71,13 @@ class LinkedList:
             prev = curr
             curr = nex
         self.head = prev
+
+    def recursive_reverse(self, curr):
+        """Reverse the list, recursively."""
+        if curr._next is None:
+            self.head = curr
+            return
+        self.recursive_reverse(curr._next)
+        nex = curr._next
+        nex._next = curr
+        curr._next = None
