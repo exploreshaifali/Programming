@@ -14,15 +14,20 @@ class DoublyLinkedList:
 
     def insertAtHead(self, data):
         new_node = Node(data, pre=None, nex=self.head)
-        self.head.pre = new_node
+        if self.head is not None:
+            self.head.pre = new_node
         self.head = new_node
 
     def insertAtTail(self, data):
         temp = self.head
-        while temp.nex is not None:
-            temp = temp.nex
-        new_node = Node(data, pre=temp, nex=None)
-        temp.nex = new_node
+        if temp is None:
+            new_node = Node(data, pre=None, nex=None)
+            self.head = new_node
+        else:
+            while temp.nex is not None:
+                temp = temp.nex
+            new_node = Node(data, pre=temp, nex=None)
+            temp.nex = new_node
 
     def travel(self):
         temp = self.head
