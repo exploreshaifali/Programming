@@ -17,3 +17,9 @@ class DoublyLinkedList:
         self.head.pre = new_node
         self.head = new_node
 
+    def insertAtTail(self, data):
+        temp = self.head
+        while temp.nex is not None:
+            temp = temp.nex
+        new_node = Node(data, pre=temp, nex=None)
+        temp.nex = new_node
