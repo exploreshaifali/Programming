@@ -42,3 +42,21 @@ class LinkedList:
             temp._next = new_node
         else:
             print("not a good position.")
+
+    def deleteAt(self, n):
+        """Delete element at given index."""
+        temp =self.head
+        if n == 0:
+            self.head = self.head._next
+            return
+        i = 0
+        while (i < (n-1)) and (temp is not None):
+            i += 1
+            temp = temp._next
+        if (i == (n-1)) and (temp is not None):
+            if temp._next is None:
+                print("wrong position")
+            else:
+                temp._next = temp._next._next
+        else:
+            print("wrong position")
