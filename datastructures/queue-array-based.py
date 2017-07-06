@@ -16,3 +16,14 @@ class Queue:
             return True
         return False
 
+    def enqueue(self, data):
+        if self.is_full():
+            return
+        if self.is_empty():
+            self.tail = 0
+            self.front = 0
+        else:
+            # circular array looping
+            self.tail = (self.tail + 1)%self.size
+        self.q[self.tail] = data
+
