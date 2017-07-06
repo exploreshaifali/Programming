@@ -15,6 +15,12 @@ class Queue:
             self.head = new_node
             self.tail = new_node
 
+    def travel(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data)
+            temp = temp.nex
+
     def enqueue(self, data):
         new_node = Node(data)
         if (self.tail is None) and (self.head is None):
