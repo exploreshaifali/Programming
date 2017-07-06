@@ -24,8 +24,19 @@ class Queue:
     def enqueue(self, data):
         new_node = Node(data)
         if (self.tail is None) and (self.head is None):
+            # when queue/linked-list is empty
             self.head = new_node
             self.tail = new_node
         else:
             self.tail.nex = new_node
             self.tail = new_node
+
+    def dequeue(self):
+        if (self.tail is None) and (self.head is None):
+            # when queue/linked-list is empty
+            return
+        ret = self.head.data
+        if self.head == self.tail:
+            self.tail = None
+        self.head = self.head.nex
+        return ret
