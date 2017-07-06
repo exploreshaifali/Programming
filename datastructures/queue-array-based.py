@@ -27,6 +27,17 @@ class Queue:
             self.tail = (self.tail + 1)%self.size
         self.q[self.tail] = data
 
+    def dequeue(self):
+        if self.is_empty():
+            return
+        ret = self.q[self.front]
+        if self.front == self.tail:
+            self.front = -1
+            self.tail = -1
+        else:
+            self.front = (self.front + 1)%self.size
+        return ret
+
     def travel(self):
         """Print elements in queue from front to tail."""
         i = self.front
