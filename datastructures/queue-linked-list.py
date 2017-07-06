@@ -14,3 +14,12 @@ class Queue:
             new_node = Node(data)
             self.head = new_node
             self.tail = new_node
+
+    def enqueue(self, data):
+        new_node = Node(data)
+        if (self.tail is None) and (self.head is None):
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.nex = new_node
+            self.tail = new_node
