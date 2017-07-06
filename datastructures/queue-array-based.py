@@ -11,3 +11,8 @@ class Queue:
             return True
         return False
 
+    def is_full(self):
+        if (self.tail+1)%self.size == self.front:
+            return True
+        return False
+
